@@ -35,9 +35,6 @@ module.exports = {
         '150': '150ms',
         '300': '300ms',
       },
-      fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-      },
     },
   },
   plugins: [],
