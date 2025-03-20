@@ -3,34 +3,26 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --background: #ffffff;
+    --foreground: #171717;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background: #0a0a0a;
+      --foreground: #ededed;
+    }
+  }
+
   html {
     font-family: var(--font-montserrat), system-ui, sans-serif;
   }
-}
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  body {
+    background: var(--background);
+    color: var(--foreground);
   }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-geist-sans), Arial, sans-serif;
 }
 
 /* Fix for Leaflet map container */
@@ -48,4 +40,25 @@ body {
 /* Fix for marker icon in dark mode */
 .leaflet-marker-icon {
   filter: none !important;
+}
+
+/* Loading screen styles */
+.loading-screen {
+  @apply fixed inset-0 bg-black flex items-center justify-center;
+}
+
+.loading-content {
+  @apply text-center;
+}
+
+.loading-icon {
+  @apply relative w-24 h-24 mb-8 mx-auto;
+}
+
+.loading-title {
+  @apply text-2xl font-bold text-white;
+}
+
+.loading-subtitle {
+  @apply text-blue-200 text-sm;
 }

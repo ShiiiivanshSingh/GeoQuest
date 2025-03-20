@@ -9,8 +9,10 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${montserrat.variable}`}>
-      <body className="font-mont">{children}</body>
+    <html lang="en" className={`${montserrat.variable} antialiased`}>
+      <body className="font-mont min-h-screen bg-black text-white">
+        {children}
+      </body>
     </html>
   )
 }

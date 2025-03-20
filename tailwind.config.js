@@ -5,6 +5,7 @@ module.exports = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       backgroundImage: {
@@ -14,6 +15,7 @@ module.exports = {
       animation: {
         'ping': 'ping 2s cubic-bezier(0, 0, 0.2, 1) infinite',
         'pulse': 'pulse 3s cubic-bezier(0, 0, 0.2, 1) infinite',
+        'spin': 'spin 2s linear infinite',
       },
       keyframes: {
         ping: {
@@ -30,13 +32,21 @@ module.exports = {
             opacity: '.5',
           },
         },
+        spin: {
+          from: {
+            transform: 'rotate(0deg)',
+          },
+          to: {
+            transform: 'rotate(360deg)',
+          },
+        },
       },
       transitionDelay: {
         '150': '150ms',
         '300': '300ms',
       },
       fontFamily: {
-        mont: ['var(--font-montserrat)'],
+        mont: ['var(--font-montserrat)', 'system-ui', 'sans-serif'],
       },
     },
   },
