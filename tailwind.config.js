@@ -16,6 +16,8 @@ module.exports = {
         'ping': 'ping 2s cubic-bezier(0, 0, 0.2, 1) infinite',
         'pulse': 'pulse 3s cubic-bezier(0, 0, 0.2, 1) infinite',
         'spin': 'spin 2s linear infinite',
+        'ping-delay-150': 'ping 2s cubic-bezier(0, 0, 0.2, 1) infinite 150ms',
+        'ping-delay-300': 'ping 2s cubic-bezier(0, 0, 0.2, 1) infinite 300ms',
       },
       keyframes: {
         ping: {
@@ -51,4 +53,10 @@ module.exports = {
     },
   },
   plugins: [],
+  future: {
+    hoverOnlyWhenSupported: true,
+  },
+  experimental: {
+    optimizeUniversalDefaults: true
+  }
 } 
