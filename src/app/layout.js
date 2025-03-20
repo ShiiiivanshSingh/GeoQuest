@@ -3,8 +3,8 @@ import './globals.css'
 import "leaflet/dist/leaflet.css";
 
 export const metadata = {
-  title: 'GeoGuessr Clone',
-  description: 'A location guessing game',
+  title: 'GeoGuessr but Free',
+  description: 'A GeoGuessr clone using Mapillary for street-level imagery',
 }
 
 export default function RootLayout({ children }) {
