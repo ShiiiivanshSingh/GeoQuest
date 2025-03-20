@@ -117,77 +117,75 @@ const CITIES = [
 ];
 
 // Game Over Summary Component
-const GameOverScreen = ({ roundHistory, onPlayAgain }) => (
-  <div className="fixed inset-0 z-[200]">
-    <div className="absolute inset-0 bg-[#1f2937]"></div>
-    <div className="relative z-[201] h-full flex flex-col items-center justify-center p-8">
-      <div className="max-w-4xl w-full bg-white/10 rounded-2xl p-8 backdrop-blur-sm">
-        <h1 className="text-4xl font-bold text-white text-center mb-2">Game Over!</h1>
-        <p className="text-white/60 text-center mb-8">Here's how you did:</p>
-        
-        {/* Total Score */}
-        <div className="bg-white/10 rounded-xl p-6 mb-8">
-          <div className="text-center">
-            <div className="text-white/60 text-sm uppercase tracking-wider mb-2">Total Score</div>
-            <div className="text-5xl font-bold text-white">
-              {roundHistory.reduce((sum, round) => sum + round.score, 0).toFixed(0)}
+const GameOverScreen = ({ roundHistory, onPlayAgain }) => {
+  const totalScore = roundHistory.reduce((sum, round) => sum + round.score, 0);
+  const averageDistance = roundHistory.reduce((sum, r) => sum + r.distance, 0) / roundHistory.length;
+  const bestRound = Math.max(...roundHistory.map(r => r.score));
+  const perfectRounds = roundHistory.filter(r => r.score > 4900).length;
+
+  return (
+    <div className="fixed inset-0 z-[200] bg-[#1f2937] overflow-hidden">
+      <div className="h-full flex flex-col items-center justify-center p-4">
+        <div className="w-full max-w-2xl space-y-6">
+          {/* Score */}
+          <div className="text-center mb-2">
+            <h1 className="text-[5rem] leading-none font-bold text-yellow-400">
+              {totalScore.toFixed(0)}
+            </h1>
+            <p className="text-white/60 text-xs uppercase tracking-widest">FINAL SCORE</p>
+          </div>
+
+          {/* Stats Grid */}
+          <div className="grid grid-cols-3 gap-3">
+            <div className="bg-white/5 rounded-lg p-3 text-center">
+              <div className="text-2xl font-bold text-white mb-1">{bestRound.toFixed(0)}</div>
+              <div className="text-white/40 text-[10px] uppercase tracking-wider">Best Round</div>
+            </div>
+            <div className="bg-white/5 rounded-lg p-3 text-center">
+              <div className="text-2xl font-bold text-white mb-1">{averageDistance.toFixed(0)}</div>
+              <div className="text-white/40 text-[10px] uppercase tracking-wider">Avg Distance km</div>
+            </div>
+            <div className="bg-white/5 rounded-lg p-3 text-center">
+              <div className="text-2xl font-bold text-white mb-1">{perfectRounds}</div>
+              <div className="text-white/40 text-[10px] uppercase tracking-wider">Perfect Rounds</div>
             </div>
           </div>
-        </div>
 
-        {/* Rounds Summary */}
-        <div className="grid gap-4 mb-8">
-          {roundHistory.map((round, index) => (
-            <div key={index} className="bg-white/5 rounded-lg p-4 flex items-center justify-between">
-              <div className="flex items-center gap-4">
-                <div className="bg-white/10 rounded-full p-2 w-12 h-12 flex items-center justify-center">
-                  <span className="text-white font-bold">{index + 1}</span>
+          {/* Rounds Timeline */}
+          <div className="space-y-2">
+            <div className="text-xs uppercase tracking-wider text-white/40 mb-1 pl-14">Round Summary</div>
+            {roundHistory.map((round, index) => (
+              <div key={index} 
+                className="bg-white/5 rounded-lg p-3 flex items-center justify-between group hover:bg-white/10 transition-all">
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-sm font-medium text-white/60">
+                    {index + 1}
+                  </div>
+                  <div>
+                    <div className="text-white text-sm font-medium">{round.cityName}</div>
+                    <div className="text-white/40 text-xs">{round.distance.toFixed(1)} km</div>
+                  </div>
                 </div>
-                <div>
-                  <div className="text-white font-medium">{round.cityName}</div>
-                  <div className="text-white/60 text-sm">{round.distance.toFixed(1)} km away</div>
+                <div className="text-xl font-bold text-blue-400">
+                  {round.score.toFixed(0)}
                 </div>
               </div>
-              <div className="text-xl font-bold text-white">{round.score.toFixed(0)} pts</div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
 
-        {/* Stats */}
-        <div className="grid grid-cols-3 gap-4 mb-8">
-          <div className="bg-white/5 rounded-lg p-4 text-center">
-            <div className="text-white/60 text-sm mb-1">Best Round</div>
-            <div className="text-2xl font-bold text-white">
-              {Math.max(...roundHistory.map(r => r.score)).toFixed(0)}
-            </div>
-          </div>
-          <div className="bg-white/5 rounded-lg p-4 text-center">
-            <div className="text-white/60 text-sm mb-1">Average Distance</div>
-            <div className="text-2xl font-bold text-white">
-              {(roundHistory.reduce((sum, r) => sum + r.distance, 0) / roundHistory.length).toFixed(1)} km
-            </div>
-          </div>
-          <div className="bg-white/5 rounded-lg p-4 text-center">
-            <div className="text-white/60 text-sm mb-1">Perfect Rounds</div>
-            <div className="text-2xl font-bold text-white">
-              {roundHistory.filter(r => r.score > 4900).length}
-            </div>
-          </div>
+          {/* Play Again Button */}
+          <button 
+            onClick={onPlayAgain}
+            className="w-full bg-white/5 hover:bg-white/10 text-white py-3 rounded-lg transition-all 
+                     text-sm font-medium uppercase tracking-wider border border-white/10"
+          >
+            Play Again
+          </button>
         </div>
-
-        {/* Play Again Button */}
-        <button 
-          onClick={onPlayAgain}
-          className="bg-[#84cc16] hover:bg-[#84cc16]/90 active:bg-[#84cc16]/80 w-full
-                   text-white px-8 py-4 rounded-lg transition-all duration-200 
-                   font-medium text-xl uppercase tracking-wide"
-        >
-          Play Again
-        </button>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 const Game = () => {
   const [image, setImage] = useState(null);
@@ -375,7 +373,29 @@ const Game = () => {
                   </div>
                   {!score && (
                     <button 
-                      onClick={handleNewGame}
+                      onClick={() => {
+                        // Set a dummy guess far away to ensure 0 points
+                        setGuess([0, 0]);
+                        // Calculate score which will be 0 due to large distance
+                        const distance = haversine(image.lat, image.lng, 0, 0);
+                        const roundScore = 0; // Force 0 score for skips
+                        setScore(roundScore.toFixed(2));
+                        setTotalScore(prev => prev + roundScore);
+                        
+                        // Add round to history
+                        setRoundHistory(prev => [...prev, {
+                          cityName: currentCity.name,
+                          distance: distance,
+                          score: roundScore,
+                          guess: [0, 0],
+                          actual: [image.lat, image.lng]
+                        }]);
+
+                        // Check if game is over
+                        if (round === 5) {
+                          setIsGameOver(true);
+                        }
+                      }}
                       className="bg-gradient-to-br from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 
                                active:from-red-700 active:to-red-800 text-white px-10 py-3 rounded-lg 
                                transition-all duration-200 text-lg font-bold shadow-lg hover:shadow-xl 
@@ -466,13 +486,13 @@ const Game = () => {
                     {/* Points */}
                     <div className="text-center mt-4">
                       <div className="text-white text-lg font-medium">
-                        You got
+                        Location: {currentCity.name}
                       </div>
                       <div className="text-4xl font-bold text-white my-1">
                         {score} points!
                       </div>
                       <div className="text-white/60 text-sm">
-                        You guessed {haversine(image.lat, image.lng, guess[0], guess[1]).toFixed(1)} km from the correct location
+                        You guessed {haversine(image.lat, image.lng, guess[0], guess[1]).toFixed(1)} km from {currentCity.name}
                       </div>
                     </div>
 
