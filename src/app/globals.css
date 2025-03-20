@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html {
+    font-family: var(--font-montserrat), system-ui, sans-serif;
+  }
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;

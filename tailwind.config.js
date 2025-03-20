@@ -35,6 +35,9 @@ module.exports = {
         '150': '150ms',
         '300': '300ms',
       },
+      fontFamily: {
+        mont: ['var(--font-montserrat)'],
+      },
     },
   },
   plugins: [],
