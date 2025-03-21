@@ -1,6 +1,6 @@
-# GeoGuessr Clone with Mapillary
+# GeoQuest
 
-A free GeoGuessr clone built with Next.js, React, and Mapillary for street-level imagery.
+A modern geography exploration game built with Next.js, React, and Mapillary for street-level imagery.
 
 ## Features
 
@@ -19,7 +19,7 @@ A free GeoGuessr clone built with Next.js, React, and Mapillary for street-level
 1. Clone the repository:
 ```bash
 git clone <your-repo-url>
-cd geoguessr-clone
+cd geoquest
 ```
 
 2. Install dependencies:
