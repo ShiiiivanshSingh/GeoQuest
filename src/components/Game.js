@@ -53,7 +53,7 @@ const GameOverScreen = ({ roundHistory, onPlayAgain }) => {
           {/* Score */}
           <div className="text-center mb-2">
             <h1 className="text-[5rem] leading-none font-bold text-yellow-400">
-              {totalScore.toFixed(0)}
+              {totalScore.toFixed(2)}
             </h1>
             <p className="text-white/60 text-xs uppercase tracking-widest">FINAL SCORE</p>
           </div>
@@ -61,7 +61,7 @@ const GameOverScreen = ({ roundHistory, onPlayAgain }) => {
           {/* Stats Grid */}
           <div className="grid grid-cols-3 gap-3">
             <div className="bg-white/5 rounded-lg p-3 text-center">
-              <div className="text-2xl font-bold text-white mb-1">{bestRound.toFixed(0)}</div>
+              <div className="text-2xl font-bold text-white mb-1">{bestRound.toFixed(2)}</div>
               <div className="text-white/40 text-[10px] uppercase tracking-wider">Best Round</div>
             </div>
             <div className="bg-white/5 rounded-lg p-3 text-center">
@@ -90,7 +90,7 @@ const GameOverScreen = ({ roundHistory, onPlayAgain }) => {
                   </div>
                 </div>
                 <div className="text-xl font-bold text-blue-400">
-                  {round.score.toFixed(0)}
+                  {round.score.toFixed(2)}
                 </div>
               </div>
             ))}
@@ -230,28 +230,23 @@ const Game = () => {
         actual: [image.lat, image.lng]
       }]);
 
-      // Check if game is over
-      if (round === 5) {
-        setIsGameOver(true);
-      }
+      // Don't automatically show game over screen after a delay
+      // Let user click the button to see final score
     }
   };
 
   const handleNewGame = () => {
     if (round === 5) {
-      // Reset everything for a new game
-      setRoundHistory([]);
-      setTotalScore(0);
-      setRound(1);
-      setIsGameOver(false);
+      // On round 5, show the game over screen when the button is clicked
+      setIsGameOver(true);
     } else {
       // Continue to next round
       setRound(prev => prev + 1);
+      setGuess(null);
+      setScore(null);
+      const abortController = new AbortController();
+      fetchImage(abortController);
     }
-    setGuess(null);
-    setScore(null);
-    const abortController = new AbortController();
-    fetchImage(abortController);
   };
 
   const handlePlayAgain = () => {
@@ -292,7 +287,7 @@ const Game = () => {
                 <div className="flex items-center gap-2">
                   <div className="flex flex-col bg-black/50 rounded-lg px-4 py-2">
                     <span className="text-sm text-gray-300 font-medium">Total Score</span>
-                    <span className="text-2xl font-bold text-white">{totalScore}</span>
+                    <span className="text-2xl font-bold text-white">{totalScore.toFixed(2)}</span>
                   </div>
                   {!score && (
                     <button 
@@ -313,11 +308,6 @@ const Game = () => {
                           guess: [0, 0],
                           actual: [image.lat, image.lng]
                         }]);
-
-                        // Check if game is over
-                        if (round === 5) {
-                          setIsGameOver(true);
-                        }
                       }}
                       className="bg-gradient-to-br from-black-600 to-black-700 hover:from-black-700 hover:to-black-800 
                                active:from-black-800 active:to-black-900 text-white px-6 py-3 rounded-lg 
@@ -428,21 +418,28 @@ const Game = () => {
                         Location: {currentCity.name}
                       </div>
                       <div className="text-4xl font-bold text-white my-1">
-                        {score} points!
+                        {parseFloat(score).toFixed(2)} points!
                       </div>
                       <div className="text-white/60 text-sm">
                         You guessed {haversine(image.lat, image.lng, guess[0], guess[1]).toFixed(1)} km from {currentCity.name}
                       </div>
                     </div>
 
-                    {/* Game Summary Button */}
-                    <button 
+                    
+                    {round === 5 && (
+                      <div className="text-yellow-400 text-sm mt-2 flex justify-center">
+                        Click the button below to see your final score
+                      </div>
+                    )}
+
+                   
+                    <button
                       onClick={handleNewGame}
                       className="bg-[#84cc16] hover:bg-[#84cc16]/90 active:bg-[#84cc16]/80 w-full
                                text-white px-8 py-3 rounded-lg transition-all duration-200 
                                font-medium text-lg uppercase tracking-wide mt-4"
                     >
-                      Next Round
+                      {round === 5 ? "View Final Score" : "Next Round"}
                     </button>
                   </div>
                 </div>
