@@ -21,10 +21,11 @@ export default function Navigation() {
           <div className="flex gap-6">
             <Link href="/" className="text-white/70 hover:text-white transition-colors hover:translate-y-[-2px] transition-transform duration-200">Home</Link>
             <Link href="/about" className="text-white/70 hover:text-white transition-colors hover:translate-y-[-2px] transition-transform duration-200">About</Link>
-            <Link href="/game" className="text-white/70 hover:text-white transition-colors hover:translate-y-[-2px] transition-transform duration-200">Play</Link>
+            <Link href="/how-to-play" className="text-white/70 hover:text-white transition-colors hover:translate-y-[-2px] transition-transform duration-200">How to Play</Link>
           </div>
         </div>
       </div>
     </nav>
   );
 } 
+

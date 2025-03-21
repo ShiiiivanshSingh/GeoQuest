@@ -34,6 +34,23 @@ export default function AboutUs() {
       <div className="relative z-10 pointer-events-auto">
         <Navigation />
         
+        {/* Decorative Globe Icons */}
+        <div className="fixed top-[35%] right-[25%] w-20 h-20 text-white/20 animate-float animation-delay-300">
+          <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+          </svg>
+        </div>
+        <div className="fixed bottom-[40%] left-[25%] w-12 h-12 text-white/10 animate-float animation-delay-700">
+          <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm6.93 6h-2.95c-.32-1.25-.78-2.45-1.38-3.56 1.84.63 3.37 1.91 4.33 3.56zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56-1.84-.63-3.37-1.9-4.33-3.56zm2.95-8H5.08c.96-1.66 2.49-2.93 4.33-3.56C8.81 5.55 8.35 6.75 8.03 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66c-.09-.66-.16-1.32-.16-2 0-.68.07-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95c-.96 1.65-2.49 2.93-4.33 3.56zM16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2h-3.38z"/>
+          </svg>
+        </div>
+        <div className="fixed top-[50%] right-[35%] w-16 h-16 text-white/15 animate-floatSlow animation-delay-1000">
+          <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20.5 3l-.16.03L15 5.1 9 3 3.36 4.9c-.21.07-.36.25-.36.48V20.5c0 .28.22.5.5.5l.16-.03L9 18.9l6 2.1 5.64-1.9c.21-.07.36-.25.36-.48V3.5c0-.28-.22-.5-.5-.5zM15 19l-6-2.11V5l6 2.11V19z"/>
+          </svg>
+        </div>
+        
         {/* Hero Section */}
         <section className="h-screen flex items-center">
           <div className="container mx-auto px-4 relative">
@@ -312,66 +329,8 @@ export default function AboutUs() {
         </div>
       </div>
 
-      {/* Animations CSS */}
+      {/* Animation styles */}
       <style jsx global>{`
-        @keyframes fadeIn {
-          0% { opacity: 0; }
-          100% { opacity: 1; }
-        }
-        @keyframes slowZoom {
-          0% { transform: scale(1.05); }
-          100% { transform: scale(1); }
-        }
-        @keyframes float {
-          0% { transform: translateY(0px) rotate(0deg); }
-          50% { transform: translateY(-10px) rotate(5deg); }
-          100% { transform: translateY(0px) rotate(0deg); }
-        }
-        @keyframes floatSlow {
-          0% { transform: translateY(0px) rotate(0deg); }
-          50% { transform: translateY(-15px) rotate(-5deg); }
-          100% { transform: translateY(0px) rotate(0deg); }
-        }
-        @keyframes slideInUp {
-          0% { transform: translateY(30px); opacity: 0; }
-          100% { transform: translateY(0); opacity: 1; }
-        }
-        @keyframes slideInFromLeft {
-          0% { transform: translateX(-30px); opacity: 0; }
-          100% { transform: translateX(0); opacity: 1; }
-        }
-        @keyframes pulse {
-          0%, 100% { opacity: 1; }
-          50% { opacity: 0.7; }
-        }
-        @keyframes spin-slow {
-          0% { transform: rotate(0deg); }
-          100% { transform: rotate(360deg); }
-        }
-        .animate-fadeIn {
-          animation: fadeIn 1s ease-out forwards;
-        }
-        .animate-slowZoom {
-          animation: slowZoom 20s ease-out forwards;
-        }
-        .animate-float {
-          animation: float 4s ease-in-out infinite;
-        }
-        .animate-floatSlow {
-          animation: floatSlow 6s ease-in-out infinite;
-        }
-        .animate-slideInUp {
-          animation: slideInUp 1s ease-out forwards;
-        }
-        .animate-slideInFromLeft {
-          animation: slideInFromLeft 1s ease-out forwards;
-        }
-        .animate-pulse {
-          animation: pulse 1.5s ease-in-out infinite;
-        }
-        .animate-spin-slow {
-          animation: spin-slow 10s linear infinite;
-        }
         .animation-delay-300 {
           animation-delay: 300ms;
         }
@@ -383,6 +342,60 @@ export default function AboutUs() {
         }
         .animation-delay-1000 {
           animation-delay: 1000ms;
+        }
+        .animate-fadeIn {
+          animation: fadeIn 1s ease-in-out forwards;
+        }
+        .animate-slowZoom {
+          animation: slowZoom 30s ease-in-out infinite alternate;
+        }
+        .animate-float {
+          animation: float 6s ease-in-out infinite alternate;
+        }
+        .animate-floatSlow {
+          animation: float 8s ease-in-out infinite alternate;
+        }
+        .animate-slideInUp {
+          animation: slideInUp 1s ease-out forwards;
+        }
+        .animate-slideInFromLeft {
+          animation: slideInFromLeft 1s ease-out forwards;
+        }
+        .animate-pulse {
+          animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        .animate-spin-slow {
+          animation: spin 5s linear infinite;
+        }
+
+        @keyframes fadeIn {
+          0% { opacity: 0; }
+          100% { opacity: 1; }
+        }
+        @keyframes slowZoom {
+          0% { transform: scale(1.0); }
+          100% { transform: scale(1.1); }
+        }
+        @keyframes float {
+          0% { transform: translateY(0px); }
+          50% { transform: translateY(-10px); }
+          100% { transform: translateY(5px); }
+        }
+        @keyframes slideInUp {
+          0% { opacity: 0; transform: translateY(20px); }
+          100% { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideInFromLeft {
+          0% { opacity: 0; transform: translateX(-20px); }
+          100% { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes pulse {
+          0%, 100% { opacity: 1; }
+          50% { opacity: .7; }
+        }
+        @keyframes spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
         }
       `}</style>
     </main>
