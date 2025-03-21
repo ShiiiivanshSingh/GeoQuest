@@ -319,14 +319,15 @@ const Game = () => {
                           setIsGameOver(true);
                         }
                       }}
-                      className="bg-gradient-to-br from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 
-                               active:from-red-700 active:to-red-800 text-white px-10 py-3 rounded-lg 
-                               transition-all duration-200 text-lg font-bold shadow-lg hover:shadow-xl 
+                      className="bg-gradient-to-br from-black-600 to-black-700 hover:from-black-700 hover:to-black-800 
+                               active:from-black-800 active:to-black-900 text-white px-6 py-3 rounded-lg 
+                               transition-all duration-200 font-medium shadow-lg hover:shadow-xl 
                                active:transform active:scale-95 uppercase tracking-wider
-                               border border-red-400/30 hover:border-red-400/50"
+                               border border-black-500/30 hover:border-black-500/50 flex items-center gap-2"
                       title="Skip this round (0 points)"
                     >
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-400 group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <span>Skip</span>
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 5l7 7-7 7M5 5l7 7-7 7" />
                       </svg>
                     </button>
@@ -356,7 +357,7 @@ const Game = () => {
               className={`fixed transition-all duration-300 ease-out ${
                 isMapExpanded 
                   ? 'inset-0 z-[100]' 
-                  : 'bottom-24 right-4 w-[300px] h-[200px] z-[100] hover:scale-110 hover:shadow-2xl'
+                  : 'bottom-10 right-4 w-[300px] h-[200px] z-[100] hover:scale-110 hover:shadow-2xl'
               }`}
               style={{ 
                 transformOrigin: 'bottom right',
@@ -373,12 +374,27 @@ const Game = () => {
                 />
                 <button
                   onClick={() => setIsMapExpanded(!isMapExpanded)}
-                  className="absolute top-3 left-3 z-30 bg-white/90 backdrop-blur-sm p-2.5 rounded-lg 
+                  className="absolute top-3 left-3 z-30 bg-white/90 backdrop-blur-sm px-3 py-2 rounded-lg 
                            shadow-lg hover:bg-white transition-all duration-200 
                            active:transform active:scale-95 border border-gray-200
-                           hover:shadow-xl text-gray-700 hover:text-gray-900"
+                           hover:shadow-xl text-gray-700 hover:text-gray-900
+                           text-sm font-medium flex items-center gap-2"
                 >
-                  {isMapExpanded ? '↙' : '↗'}
+                  {isMapExpanded ? (
+                    <>
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                      <span>Collapse</span>
+                    </>
+                  ) : (
+                    <>
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
+                      </svg>
+                      <span>Expand</span>
+                    </>
+                  )}
                 </button>
               </div>
             </div>
