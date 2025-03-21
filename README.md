@@ -2,15 +2,14 @@
 
 <div align="center">
   <h1>GeoQuest 🌍</h1>
-  <p>An immersive geography exploration game that tests your knowledge of locations around the world.</p>
+  <p>An immersive geography exploration game that tests your knowledge of locations around the world through street-level imagery, interactive maps, and engaging gameplay mechanics.</p>
   
   <a href="https://geog-eight.vercel.app/"><img src="https://img.shields.io/badge/Live-Demo-4285F4?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Demo"></a>
-
-  <a href="#-getting-started"><img src="https://img.shields.io/badge/🔧%20How%20to%20Install-FF5733?style=for-the-badge" alt="How to Install"></a>
+  <a href="#-getting-started"><img src="https://img.shields.io/badge/🔧%20How%20to%20Install-808080?style=for-the-badge" alt="How to Install"></a>
   
 </div>
 
-Welcome to GeoQuest! A modern geography game that challenges you to identify locations from street-level imagery around the globe. Perfect for geography enthusiasts, travelers, and anyone looking to expand their world knowledge!
+Welcome to GeoQuest! A modern geography game built with Next.js and React that challenges players to identify locations from street-level imagery around the globe. With an intuitive interface, real-time scoring, and comprehensive game statistics, it's perfect for geography enthusiasts, travelers, educators, and anyone looking to expand their world knowledge in an engaging way!
 
 ## ✨ Key Features
 
@@ -24,22 +23,22 @@ Welcome to GeoQuest! A modern geography game that challenges you to identify loc
   </br>Detailed round-by-round scoring with distance calculations
 
 * 🏆 **Performance Summary**
-  </br>Comprehensive game summary with total score and statistics
+  </br>Comprehensive game summary with total score, average accuracy, best round, and detailed statistics. Includes shareable results and performance graphs
 
 * 📱 **Responsive Design**
-  </br>Play seamlessly on desktop, tablet, or mobile devices
+  </br>Play seamlessly on desktop, tablet, or mobile devices with a fully responsive UI that adapts to any screen size. Touch-optimized controls for mobile players
 
 * 🎮 **Five-Round Games**
-  </br>Each game consists of five challenging rounds
+  </br>Each game consists of five challenging rounds with increasing difficulty and diverse locations. Features unique location selection algorithm to ensure variety
 
 ## 🎮 How to Play
 
-1. You'll be shown a street-level image from somewhere in the world
-2. Look for clues in the image about your location
-3. Click on the map to place your guess
-4. Click "Make Guess" to see how close you were
-5. Your score is based on the distance between your guess and the actual location
-6. After 5 rounds, view your final score and stats
+1. You'll be shown a street-level image from somewhere in the world, powered by Mapillary's global imagery
+2. Look for clues in the image about your location - architecture, road signs, vegetation, driving side, etc.
+3. Click or tap on the interactive world map to place your guess marker
+4. Click "Make Guess" to submit your location and see how close you were
+5. Your score is calculated based on the distance between your guess and the actual location using a custom scoring algorithm
+6. After 5 rounds, view your final score, statistics, and performance breakdown with detailed metrics
 
 ## 🔧 Technologies Used
 
@@ -55,6 +54,7 @@ Welcome to GeoQuest! A modern geography game that challenges you to identify loc
 ### Prerequisites
 - Node.js 18+ installed
 - A Mapillary API key (free)
+- NPM or Yarn package manager
 
 ### Installation
 1. Clone the repository:
@@ -113,9 +113,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## 🌟 Screenshots
 
 <div align="center">
-  <!-- Add your screenshots here once you have them -->
-  <img src="/public/screenshot1.jpg" alt="Screenshot 1" width="80%">
-  <img src="/public/screenshot2.jpg" alt="Screenshot 2" width="80%">
+  <p><i>Screenshots coming soon!</i></p>
 </div>
 
 <div align="center">
@@ -123,5 +121,8 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 </div>
 
 <div align="center">
-  Built with ♥️ by the GeoQuest Team
+<br>
+
+
+  Built with ♥️ by Shivansh Pratap Singh.
 </div>
