@@ -4,7 +4,7 @@
   <h1>GeoQuest 🌍</h1>
   <p>An immersive geography exploration game that tests your knowledge of locations around the world through street-level imagery, interactive maps, and engaging gameplay mechanics.</p>
   
-  <a href="https://geog-eight.vercel.app/"><img src="https://img.shields.io/badge/Live-Demo-0066FF?style=for-the-badge&logo=vercel&logoColor=white" alt="GeoQuest"></a>
+  <a href="https://geog-eight.vercel.app/"><img src="https://img.shields.io/badge/Geo-Quest-0066FF?style=for-the-badge&logo=vercel&logoColor=white" alt="GeoQuest"></a>
  
   
 </div>
