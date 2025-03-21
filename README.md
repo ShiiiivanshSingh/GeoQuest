@@ -4,8 +4,8 @@
   <h1>GeoQuest 🌍</h1>
   <p>An immersive geography exploration game that tests your knowledge of locations around the world through street-level imagery, interactive maps, and engaging gameplay mechanics.</p>
   
-  <a href="https://geog-eight.vercel.app/"><img src="https://img.shields.io/badge/Live-Demo-4285F4?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Demo"></a>
-  <a href="#-getting-started"><img src="https://img.shields.io/badge/🔧%20How%20to%20Install-808080?style=for-the-badge" alt="How to Install"></a>
+  <a href="https://geog-eight.vercel.app/"><img src="https://img.shields.io/badge/Live-Demo-0066FF?style=for-the-badge&logo=vercel&logoColor=white" alt="GeoQuest"></a>
+ 
   
 </div>
 
@@ -51,6 +51,10 @@ Welcome to GeoQuest! A modern geography game built with Next.js and React that c
 
 ## 🚀 Getting Started
 
+
+  <a href="#-getting-started"><img src="https://img.shields.io/badge/🔧%20How%20to%20Install-808080?style=for-the-badge" alt="How to Install"></a>
+
+  
 ### Prerequisites
 - Node.js 18+ installed
 - A Mapillary API key (free)
