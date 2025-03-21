@@ -18,6 +18,16 @@ body {
   min-height: 100vh;
 }
 
+/* Ensure navigation is always clickable */
+nav {
+  pointer-events: auto !important;
+}
+
+nav a {
+  cursor: pointer !important;
+  pointer-events: auto !important;
+}
+
 @layer components {
   /* Loading Animation Styles */
   .loading-screen {

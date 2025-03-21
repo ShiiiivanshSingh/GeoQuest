@@ -3,6 +3,7 @@
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
+import Navigation from '@/components/Navigation';
 
 export default function AboutUs() {
   const router = useRouter();
@@ -29,24 +30,11 @@ export default function AboutUs() {
         <div className="absolute inset-0 bg-black/50"></div>
       </div>
       
-     
       {/* Content Container - Ensures content flows over the fixed background */}
-      <div className="relative z-10">
-      {/* Navigation */}
-        <nav className="absolute top-0 left-0 right-0">
-          <div className="container mx-auto px-4 py-6">
-          <div className="flex justify-between items-center">
-              <div className="text-white text-2xl font-bold tracking-wider animate-fadeIn">GeoQuest</div>
-            <div className="flex gap-6">
-                <Link href="/" className="text-white/70 hover:text-white transition-colors hover:translate-y-[-2px] transition-transform duration-200">Home</Link>
-              <Link href="/about" className="text-white font-medium">About</Link>
-                <Link href="/game" className="text-white/70 hover:text-white transition-colors hover:translate-y-[-2px] transition-transform duration-200">Play</Link>
-            </div>
-          </div>
-        </div>
-      </nav>
-
-      {/* Hero Section */}
+      <div className="relative z-10 pointer-events-auto">
+        <Navigation />
+        
+        {/* Hero Section */}
         <section className="h-screen flex items-center">
           <div className="container mx-auto px-4 relative">
           <div className="max-w-3xl mx-auto text-center">
@@ -83,15 +71,15 @@ export default function AboutUs() {
                          shadow-lg hover:shadow-2xl
                          relative overflow-hidden"
                   >
-                    <span className="relative z-10 transition-transform duration-500 ease-in-out group-hover:translate-y-[-2px] inline-block">Play Now</span>
-                    <span className="absolute inset-0 bg-gradient-to-br from-gray-600/40 to-gray-800/40 
-                                   opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out
+                    <span className="relative z-10 transition-transform duration-500 ease-in group-hover:translate-y-[-2px] inline-block">Play Now</span>
+                    <span className="absolute inset-0 bg-gradient-to-br from-gray-500/40 to-gray-600/40 
+                                   opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in
                                    group-hover:animate-pulse rounded-lg"></span>
                     <span className="absolute -inset-px rounded-lg bg-gradient-to-br from-white/10 to-white/5 opacity-0 
-                                   group-hover:opacity-100 transition-all duration-500 ease-in-out blur-sm"></span>
+                                   group-hover:opacity-100 transition-all duration-500 ease-in blur-sm"></span>
                     <span className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/30 to-transparent
                                    transform translate-y-[1px] group-hover:translate-y-0 opacity-0 group-hover:opacity-100
-                                   transition-all duration-500 ease-in-out"></span>
+                                   transition-all duration-500 ease-in"></span>
               </button>
             </div>
             <div className="relative">
@@ -211,15 +199,15 @@ export default function AboutUs() {
                          shadow-lg hover:shadow-2xl
                          relative overflow-hidden"
                   >
-                    <span className="relative z-10 transition-transform duration-500 ease-in-out group-hover:translate-y-[-2px] inline-block">Play Now</span>
-                    <span className="absolute inset-0 bg-gradient-to-br from-gray-600/40 to-gray-800/40 
-                                   opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out
+                    <span className="relative z-10 transition-transform duration-500 ease-in group-hover:translate-y-[-2px] inline-block">Play Now</span>
+                    <span className="absolute inset-0 bg-gradient-to-br from-gray-500/40 to-gray-600/40 
+                                   opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in
                                    group-hover:animate-pulse rounded-lg"></span>
                     <span className="absolute -inset-px rounded-lg bg-gradient-to-br from-white/10 to-white/5 opacity-0 
-                                   group-hover:opacity-100 transition-all duration-500 ease-in-out blur-sm"></span>
+                                   group-hover:opacity-100 transition-all duration-500 ease-in blur-sm"></span>
                     <span className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/30 to-transparent
                                    transform translate-y-[1px] group-hover:translate-y-0 opacity-0 group-hover:opacity-100
-                                   transition-all duration-500 ease-in-out"></span>
+                                   transition-all duration-500 ease-in"></span>
               </button>
               <Link
                 href="/"

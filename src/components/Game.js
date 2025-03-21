@@ -263,19 +263,6 @@ const Game = () => {
 
   return (
     <div className="relative w-full h-screen overflow-hidden">
-      {/* Navigation Bar */}
-      <nav className="absolute top-0 left-0 right-0 bg-black/60 backdrop-blur-sm z-50">
-        <div className="container mx-auto px-4 py-3">
-          <div className="flex justify-between items-center">
-            <Link href="/" className="text-white text-xl font-bold tracking-wider">GeoQuest</Link>
-            <div className="flex gap-4">
-              <Link href="/" className="text-white/70 hover:text-white text-sm font-medium transition-colors">Home</Link>
-              <Link href="/about" className="text-white/70 hover:text-white text-sm font-medium transition-colors">About</Link>
-            </div>
-          </div>
-        </div>
-      </nav>
-
       {/* Main Content */}
       {loading ? (
         <LoadingAnimation />
