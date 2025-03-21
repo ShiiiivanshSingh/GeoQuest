@@ -3,8 +3,16 @@ import './globals.css'
 import "leaflet/dist/leaflet.css";
 
 export const metadata = {
-  title: 'GeoGuessr but Free',
-  description: 'A GeoGuessr clone using Mapillary for street-level imagery',
+  title: 'GeoQuest',
+  description: 'Test your geography knowledge and explore the world',
+  icons: {
+    icon: [
+      {
+        url: '/favicon.svg',
+        type: 'image/svg+xml',
+      }
+    ],
+  },
 }
 
 export default function RootLayout({ children }) {

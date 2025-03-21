@@ -357,7 +357,7 @@ const Game = () => {
               className={`fixed transition-all duration-300 ease-out ${
                 isMapExpanded 
                   ? 'inset-0 z-[100]' 
-                  : 'bottom-10 right-4 w-[300px] h-[200px] z-[100] hover:scale-110 hover:shadow-2xl'
+                  : 'bottom-24 right-4 w-[300px] h-[200px] z-[100] hover:scale-110 hover:shadow-2xl'
               }`}
               style={{ 
                 transformOrigin: 'bottom right',
