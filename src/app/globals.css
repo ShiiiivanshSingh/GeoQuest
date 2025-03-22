@@ -47,19 +47,19 @@ nav a {
   }
 
   .loading-circle-1 {
-    @apply inset-0 bg-blue-500/20 animate-ping;
+    @apply inset-0 bg-white/20 animate-ping;
   }
 
   .loading-circle-2 {
-    @apply inset-2 bg-blue-500/40 animate-ping-delay-150;
+    @apply inset-2 bg-white/40 animate-ping-delay-150;
   }
 
   .loading-circle-3 {
-    @apply inset-4 bg-blue-500/60 animate-ping-delay-300;
+    @apply inset-4 bg-white/60 animate-ping-delay-300;
   }
 
   .loading-pulse {
-    @apply absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full animate-pulse;
+    @apply absolute inset-0 bg-white/80 rounded-full animate-pulse;
   }
 
   .loading-title {
@@ -67,7 +67,7 @@ nav a {
   }
 
   .loading-subtitle {
-    @apply text-blue-200 text-sm;
+    @apply text-white/70 text-sm;
   }
 }
 
