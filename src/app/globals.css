@@ -100,3 +100,25 @@ nav a {
 .leaflet-marker-icon {
   filter: none !important;
 }
+
+/* Small Screen Warning Animation */
+@keyframes pulse-warning {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.pulse-warning {
+  animation: pulse-warning 2s ease-in-out infinite;
+}
+
+/* Force desktop mode hint */
+.rotate-hint {
+  animation: rotate 3s ease-in-out infinite;
+}
+
+@keyframes rotate {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(90deg); }
+  50% { transform: rotate(0deg); }
+  75% { transform: rotate(90deg); }
+}
