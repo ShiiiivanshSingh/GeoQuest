@@ -69,6 +69,21 @@ nav a {
   .loading-subtitle {
     @apply text-white/70 text-sm;
   }
+  
+  .typing-animation {
+    @apply border-r-2 border-white w-max mx-auto whitespace-nowrap overflow-hidden;
+    animation: typing 1s steps(40, end), blink-caret 0.75s step-end infinite;
+  }
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: white }
 }
 
 /* Map Styles */

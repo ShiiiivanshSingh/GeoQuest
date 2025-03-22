@@ -1,4 +1,32 @@
+'use client';
+
+import { useState, useEffect } from 'react';
+
 export default function LoadingAnimation() {
+  const loadingMessages = [
+    "Preparing the world map...",
+    "Gathering map data...",
+    "Loading terrain features...",
+    "Calculating distances...",
+    "Spinning the globe...",
+    "Finding interesting locations...",
+    "Scanning coordinates...",
+    "Rendering continents...",
+  ];
+
+  const [message, setMessage] = useState(loadingMessages[0]);
+  const [key, setKey] = useState(0); // Key to force re-render of animation
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const newMessage = loadingMessages[Math.floor(Math.random() * loadingMessages.length)];
+      setMessage(newMessage);
+      setKey(prevKey => prevKey + 1); // Change key to restart animation
+    }, 3000); // Change message every 30 seconds
+    
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="loading-screen">
       <div className="loading-content">
@@ -20,7 +48,9 @@ export default function LoadingAnimation() {
         </div>
         <div>
           <h3 className="loading-title">Loading Map</h3>
-          <p className="loading-subtitle">Preparing the world map...</p>
+          <p key={key} className="loading-subtitle typing-animation">
+            {message}
+          </p>
         </div>
       </div>
     </div>
