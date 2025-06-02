@@ -10,6 +10,7 @@
  
 </div>
 
+
 Welcome to GeoQuest! A modern geography game built with Next.js and React that challenges players to identify locations from street-level imagery around the globe. With an intuitive interface, real-time scoring, and comprehensive game statistics, it's perfect for geography enthusiasts, travelers, educators, and anyone looking to expand their world knowledge in an engaging way!
 
 ## ✨ Key Features
